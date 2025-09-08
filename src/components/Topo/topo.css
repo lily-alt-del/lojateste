@@ -1,0 +1,99 @@
+.anuncio{
+    background-color: var(--background);
+    color: var(--text-color);
+    text-align: center;
+    padding: 8px 0;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.anuncio-conteudo{
+    display: inline-block;
+    overflow: hidden;    
+}
+
+.anuncio-conteudo p{
+    display:inline-block;
+    animation: textocorrido 10s linear infinite;
+}
+
+@keyframes textocorrido{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+.topo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 100px;
+    top: 0;
+    width: 100%;
+    z-index: 100%;
+    background-color: var(--text-color);
+}
+
+.topo picture{
+    max-width: 100px;
+}
+
+.topo nav{
+    display: flex;
+    gap: 20px;
+}
+
+.topo nav a {
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    color: var(--text-base);
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+}
+
+.topo nav a::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.topo nav a:hover{
+    color: var(--primary-color);
+}
+
+.topo nav a:hover::after {
+    width: 100%;
+}
+
+@media(max-width: 768px){
+    .topo{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 15px;
+    }
+
+    .topo :picture-in-picture{
+        max-width: 38px;
+    }
+
+    .topo nav{
+        gap: 20px;
+    }
+
+    .topo nav a{
+        padding: 8px 5;
+        font-size: 12px;
+    }
+
+}

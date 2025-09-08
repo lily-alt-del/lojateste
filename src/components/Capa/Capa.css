@@ -1,0 +1,93 @@
+.secao_capa {
+    height: 80vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 5%;
+    font-family: var(--font-title);
+    position: relative;
+    overflow: hidden;
+}
+
+.secao_capa::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.texto {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInUp 1s ease-in-out;
+    gap: 16px;
+    z-index: 2;
+}
+
+@keyframes fadeInUp {
+    0%{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.texto h2 {
+    font-size: 60px;
+    color: var(--title);
+    font-weight: 600;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.texto h1{
+    font-size: 140px;
+    margin: 0;
+    color: var(--title);
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/*Responsividade*/
+@media (max-width: 1200px) {
+    .texto h1{
+        font-size: 90px;
+    }
+    .texto h2{
+        font-size: 40px;
+    }
+}
+@media (max-width: 768px) {
+    .secao_capa{
+        background-position: center;
+        height: 60vh;
+    }
+    .texto{
+        align-items: center;
+        text-align: center;
+    }
+    .texto h2{
+        font-size: 28px;
+    }
+    .texto h1{
+        font-size: 60px;
+    }
+    .btn{
+        font-size: 16px;
+        padding: 12px 28px;
+    }
+}
