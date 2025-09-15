@@ -26,6 +26,12 @@
     }
 }
 
+header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
 .topo{
     display: flex;
     justify-content: space-between;
